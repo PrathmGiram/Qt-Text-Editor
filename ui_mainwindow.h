@@ -35,6 +35,9 @@ public:
     QAction *actionUndo;
     QAction *actionRedo;
     QAction *actioncopy_2;
+    QAction *actionAbout_Me;
+    QAction *actionSuperscript;
+    QAction *actionSubscript;
     QWidget *centralwidget;
     QFrame *frame;
     QWidget *widget;
@@ -69,6 +72,12 @@ public:
         actionRedo->setObjectName(QString::fromUtf8("actionRedo"));
         actioncopy_2 = new QAction(MainWindow);
         actioncopy_2->setObjectName(QString::fromUtf8("actioncopy_2"));
+        actionAbout_Me = new QAction(MainWindow);
+        actionAbout_Me->setObjectName(QString::fromUtf8("actionAbout_Me"));
+        actionSuperscript = new QAction(MainWindow);
+        actionSuperscript->setObjectName(QString::fromUtf8("actionSuperscript"));
+        actionSubscript = new QAction(MainWindow);
+        actionSubscript->setObjectName(QString::fromUtf8("actionSubscript"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         frame = new QFrame(centralwidget);
@@ -81,7 +90,7 @@ public:
         widget->setGeometry(QRect(-20, 30, 401, 301));
         textEdit = new QTextEdit(widget);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
-        textEdit->setGeometry(QRect(20, 40, 361, 251));
+        textEdit->setGeometry(QRect(20, 10, 421, 291));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -102,12 +111,15 @@ public:
         menufile->addSeparator();
         menufile->addAction(actionSave);
         menufile->addAction(actionSave_As);
+        menufile->addAction(actionAbout_Me);
         menuEdit->addAction(actionCut);
         menuEdit->addAction(actionPaste);
         menuEdit->addSeparator();
         menuEdit->addAction(actionUndo);
         menuEdit->addAction(actionRedo);
         menuEdit->addAction(actioncopy_2);
+        menuEdit->addAction(actionSuperscript);
+        menuEdit->addAction(actionSubscript);
 
         retranslateUi(MainWindow);
 
@@ -126,8 +138,11 @@ public:
         actionPaste->setText(QApplication::translate("MainWindow", "Paste", nullptr));
         actionUndo->setText(QApplication::translate("MainWindow", "Undo", nullptr));
         actionRedo->setText(QApplication::translate("MainWindow", "Redo", nullptr));
-        actioncopy_2->setText(QApplication::translate("MainWindow", "copy", nullptr));
-        menufile->setTitle(QApplication::translate("MainWindow", "file ", nullptr));
+        actioncopy_2->setText(QApplication::translate("MainWindow", "Copy", nullptr));
+        actionAbout_Me->setText(QApplication::translate("MainWindow", "About Me", nullptr));
+        actionSuperscript->setText(QApplication::translate("MainWindow", "Superscript", nullptr));
+        actionSubscript->setText(QApplication::translate("MainWindow", "Subscript", nullptr));
+        menufile->setTitle(QApplication::translate("MainWindow", "File ", nullptr));
         menuEdit->setTitle(QApplication::translate("MainWindow", "Edit", nullptr));
     } // retranslateUi
 
