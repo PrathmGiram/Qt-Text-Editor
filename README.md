@@ -73,6 +73,10 @@ void MainWindow::on_actionSubscript_triggered()
         format.setVerticalAlignment(QTextCharFormat::AlignSubScript);
         ui->textEdit->mergeCurrentCharFormat(format);
 }
+#Issue
+After implementing the Bold/Unbold, Superscript, and Subscript features in the OpenOCRCorrect editor,
+the buttons are functional but may not be clearly visible or ergonomically placed on the UI.
+This could confuse new users or make the editor appear cluttered.
 
 # About me
 
